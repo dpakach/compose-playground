@@ -10,6 +10,7 @@ services:
     image: owncloud/ocis:latest
     ports:
       - 9200:9200
+      - 9140:9140
     expose:
       - 9125 #ldap
       - 9126 #ldaps

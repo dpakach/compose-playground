@@ -2,6 +2,10 @@
   "HTTP": {
     "Namespace": "com.owncloud"
   },
+  "oidc": {
+    "issuer": "https://ocis:9200",
+    "insecure": true
+  },
   "policy_selector": {
     "static": {"policy" : "reva"}
   },
@@ -11,7 +15,7 @@
       "routes": [
         {
           "endpoint": "/",
-          "backend": "http://localhost:9100"
+          "backend": "http://konnectd:9100"
         },
         {
           "endpoint": "/.well-known/",
@@ -27,27 +31,27 @@
         },
         {
           "endpoint": "/ocs/",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         },
         {
           "endpoint": "/remote.php/",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         },
         {
           "endpoint": "/dav/",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         },
         {
           "endpoint": "/webdav/",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         },
         {
           "endpoint": "/status.php",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         },
         {
           "endpoint": "/index.php/",
-          "backend": "http://localhost:9140"
+          "backend": "http://ocis:9140"
         }
       ]
     },
