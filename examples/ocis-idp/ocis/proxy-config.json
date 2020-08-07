@@ -2,10 +2,6 @@
   "HTTP": {
     "Namespace": "com.owncloud"
   },
-  "oidc": {
-    "issuer": "https://ocis:9200",
-    "insecure": true
-  },
   "policy_selector": {
     "static": {"policy" : "reva"}
   },
@@ -15,7 +11,7 @@
       "routes": [
         {
           "endpoint": "/",
-          "backend": "http://konnectd:9100"
+          "backend": "http://ocis:9100"
         },
         {
           "endpoint": "/.well-known/",

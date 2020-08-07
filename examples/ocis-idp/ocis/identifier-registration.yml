@@ -10,8 +10,8 @@ clients:
     redirect_uris:
       - http://ocis:9100/oidc-callback.html
       - http://ocis:9100/
-      - https://ocis:9200/
-      - https://ocis:9200/oidc-callback.html
+      - https://localhost:9200/
+      - https://localhost:9200/oidc-callback.html
     origins:
       - http://ocis:9100
       - https://ocis:9200

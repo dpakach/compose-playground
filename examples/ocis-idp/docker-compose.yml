@@ -33,6 +33,7 @@ services:
   konnectd:
     image: owncloud/ocis-konnectd:latest
     #command: serve --listen 0.0.0.0:9130 --iss https://ocis:9200 ldap
+    #command: --log-level=debug
     ports:
       - 9130:9130
     expose:
@@ -55,6 +56,8 @@ services:
       - KONNECTD_INSECURE=true
       - KONNECTD_TRANSPORT_TLS_CERT=/etc/certs/konnectd.localhost.crt
       - KONNECTD_TRANSPORT_TLS_KEY=/etc/certs/konnectd.localhost.key
+      - KONNECTD_LOG_LEVEL=debug
+
     volumes:
       #- ./ocis/identifier-registration.yml:/config/identifier-registration.yaml
       - ./certs:/etc/certs
