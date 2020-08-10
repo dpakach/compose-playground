@@ -8,6 +8,7 @@ volumes:
 services:
   ocis:
     image: owncloud/ocis:latest
+    container_name: ocis
     ports:
       - 9200:9200
       - 9140:9140
@@ -26,12 +27,14 @@ services:
       - REVA_OIDC_INSECURE=true
     volumes:
       - ./ocis/proxy-config.json:/config/proxy-config.json
-      - ./ocis/identifier-registration.yml:/config/identifier-registration.yml
+      #- ./ocis/identifier-registration.yml:/config/identifier-registration.yml
+      - ./ocis/identifier-registration.yaml:/config/identifier-registration.yaml
       - tmp:/tmp/shared
       - ./certs:/etc/certs
 
   konnectd:
     image: owncloud/ocis-konnectd:latest
+    container_name: konnectd
     #command: serve --listen 0.0.0.0:9130 --iss https://ocis:9200 ldap
     #command: --log-level=debug
     ports:
@@ -59,5 +62,5 @@ services:
       - KONNECTD_LOG_LEVEL=debug
 
     volumes:
-      #- ./ocis/identifier-registration.yml:/config/identifier-registration.yaml
+      - ./ocis/identifier-registration.yaml:/config/identifier-registration.yaml
       - ./certs:/etc/certs

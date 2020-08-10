@@ -1,5 +1,3 @@
----
-
 # OpenID Connect client registry.
 clients:
   - id: phoenix
@@ -8,27 +6,27 @@ clients:
     insecure: yes
     trusted: yes
     redirect_uris:
-      - http://ocis:9100/oidc-callback.html
-      - http://ocis:9100/
-      - https://ocis:9200/
+      - http://apple:9100/oidc-callback.html
+      - http://apple:9100/
+      - https://apple:9200/
       - https://apple:9200/oidc-callback.html
     origins:
-      - http://ocis:9100
-      - https://ocis:9200
+      - http://apple:9100
+      - https://apple:9200
 
   - id: oc10
-      name: OC10
-      application_type: web
-      insecure: yes
-      trusted: yes
-      redirect_uris:
-        - http://ocis:9100/oidc-callback.html
-        - http://ocis:9100/
-        - https://oics:9200/
-        - https://ocis:9200/oidc-callback.html
-      origins:
-        - http://ocis:9100
-        - https://ocis:9200
+    name: OC10
+    application_type: web
+    insecure: yes
+    trusted: yes
+    redirect_uris:
+      - http://apple:9100/oidc-callback.html
+      - http://apple:9100/
+      - https://apple:9200/
+      - https://apple:9200/oidc-callback.html
+    origins:
+      - http://apple:9100
+      - https://apple:9200
 
 
   - id: ocis-explorer.js
